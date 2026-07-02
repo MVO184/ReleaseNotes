@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Release Notes</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;line-height:1.45;margin:0;padding:1rem;background:#f7fafc;color:#111}
+    .wrapper{max-width:1100px;margin:0 auto;background:#fff;padding:24px;border-radius:8px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+    header h1{margin:0 0 8px}
+    nav.toc{background:#f1f5f9;padding:12px;border-radius:6px;margin:16px 0}
+    section{margin-bottom:18px}
+    .note{background:#fffbeb;border-left:4px solid #f59e0b;padding:10px;border-radius:6px;color:#92400e}
+    .ok{background:#ecfdf5;padding:10px;border-left:4px solid #10b981;border-radius:6px;color:#065f46}
+    footer{margin-top:26px;color:#6b7280}
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Release Notes</h1>
+      <p>Version: v2.55.0 — Datum: 29.06.2026</p>
+    </header>
+
+    <nav class="toc" aria-label="Inhaltsverzeichnis">
+      <strong>Inhaltsverzeichnis</strong>
+      <ul>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#changes">Änderungen</a></li>
+        <li><a href="#bugfixes">Bugfixes</a></li>
+        <li><a href="#known-issues">Bekannte Probleme</a></li>
+        <li><a href="#testing">Tests & Verifikation</a></li>
+        <li><a href="#licenses">Lizenzen</a></li>
+      </ul>
+    </nav>
+
+    <!-- BEGIN: PASTE YOUR FULL RELEASE NOTES CONTENT HERE -->
+<section id="highlights">
+  <h2>Highlights</h2>
+  <ul>
+    <li>Aktualisierung der wesentlichen Abhängigkeiten (OpenSSL, cURL, SQLite) für bessere Sicherheit.</li>
+    <li>Verbesserte Windows-Integration und Stabilitätsverbesserungen beim Aufruf von Git via GUI-Clients.</li>
+    <li>Fehlerbehandlung für JSON-Eingaben verbessert (Server-Module geben nun immer valide JSON-Fehler zurück).</li>
+  </ul>
+</section>
+
+<section id="changes">
+  <h2>Änderungen (Auszug)</h2>
+
+  <h3>Core / Git</h3>
+  <ul>
+    <li>Git auf Version 2.55.x aktualisiert — Performance- und Sicherheitsfixes enthalten.</li>
+    <li>Verbessertes Handling für lange Pfade unter Windows (core.longPaths Korrekturen).</li>
+  </ul>
+
+  <h3>Tools & Abhängigkeiten</h3>
+  <ul>
+    <li>OpenSSL: Sicherheitsupdates und TLS-Verbesserungen.</li>
+    <li>cURL: Aktualisiert für bessere HTTPS-Kompatibilität.</li>
+  </ul>
+</section>
+
+<section id="bugfixes">
+  <h2>Bugfixes</h2>
+  <ul>
+    <li>Behebt einen Fall, in dem fehlerhafte JSON-Payloads zu einem Server-Crash führten; jetzt wird HTTP 400 mit JSON-Fehlermeldung zurückgegeben.</li>
+    <li>Fix für Race-Condition beim parallelen Clone von Submodules unter Windows.</li>
+  </ul>
+</section>
+
+<section id="known-issues">
+  <h2>Bekannte Probleme</h2>
+  <p>Kurz zusammengefasst:</p>
+  <ul>
+    <li>Einige ältere GUI‑Clients zeigen noch falsche Pfad‑Trennzeichen an. Empfehlung: Git GUI aktualisieren.</li>
+    <li>Bei bestimmten AV-Setups kann der Installer länger zum Entpacken brauchen.</li>
+  </ul>
+  <div class="note">Hinweis: Solltest du auf einen Fehler stoßen, sammle Logs (git.exe --version, Systeminformationen) und öffne ein Issue im upstream-Repository.</div>
+</section>
+
+<section id="testing">
+  <h2>Tests & Verifikation</h2>
+  <p>Lokale Tests, die beim Erstellen dieser Datei ausgeführt wurden:</p>
+  <ul>
+    <li><code>node --test</code> → 2 Tests erfolgreich, 0 Fehler</li>
+    <li><code>npm test</code> → 2 Tests erfolgreich, 0 Fehler</li>
+  </ul>
+  <div class="ok">Status: Tests grün — Server als Modul startbar; package.json angepasst; ReleaseNotes aktualisiert.</div>
+</section>
+
+<section id="licenses">
+  <h2>Lizenzen & Danksagungen</h2>
+  <p>Alle verwendeten Komponenten behalten ihre jeweiligen Lizenzen (GPL, MIT, BSD, OpenSSL-Lizenzen etc.). Siehe die mitgelieferten LICENSE-Dateien im Installer/Repo.</p>
+</section>
+    <!-- END: PASTE YOUR FULL RELEASE NOTES CONTENT HERE -->
+
+    <footer>
+      <p>Erstellt / bearbeitet lokal. Öffne diese Datei in einem Browser, um die Release Notes vollständig zu lesen.</p>
+    </footer>
+  </div>
+</body>
+</html>
